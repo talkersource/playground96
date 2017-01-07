@@ -1,0 +1,6 @@
+playground update spods > raw
+spodsort < raw > spodlist.msg
+cp spodlist.msg ../files
+rm -r raw
+rm -r spodlist.msg
+echo "all done"

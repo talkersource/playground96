@@ -1,0 +1,75 @@
+#
+#	These are comments
+#
+#  rooms take the following form
+#
+#  id
+#  name
+#  enter msg
+#  description, ending with a blank # on a newline
+#  exits, ending with 'end'
+#  auto messages, ending with 'end'
+#
+room
+in the main room.
+enters the main room.
+
+
+Welcome to the main room.....
+
+Perhaps there's not much to see here, but, after all, this room hasn't
+really been described yet...
+#
+main.boot
+main.potty
+end
+end
+#
+boot
+in the boot room.
+is forced to go away for being bad.
+This is the boot room (a place people go when they misbehave)
+# 
+main.room
+end
+this is an example to show where automessages in the room would go.
+this is a second automessage.
+end
+#
+potty
+making a deposit *smirk*
+goes off to 'do some business'
+This is a room designed to be a "relaxed rules" room.. rarely used in
+reality, at least on pg, since the rules are so relaxed to begin with.
+#
+main.room
+end
+end
+#
+# The SUs quiet room 
+#
+comfy
+is relaxing in the back room.
+goes through a small, secret door.
+
+The luxurious sofas scattered around the large study beckon you, to settle
+down and relax. Your eyelids almost start drooping, finally at last some
+peace and quiet. The warmth of the fire burning cheerfully away in the
+hearth makes you warm and relaxed. Keeping the room lit, with cheerful
+little whispers of flames which dart about merrily.
+   Bookshelves line much of the walls, and here and there a book is sitting
+on a chair, or table. The accumulated nomenclature and knowledge of years of
+programming lines the wall in a collage, you wish you'd never looked at, but
+is useful now and then. Amongst the books on programming fortunately are
+many novels, collections of poems and short stories. From Cervantes to
+Nietzsche to Archer to Blyton, the odd book now and then catching your gaze,
+ah there's some Dr Seuss! Sit down quietly, take your shoes off, and relax.
+   There is what appears to be a drinks cabinet, and fridge over in the
+corner, and opposite that with scattered speakers about the room, sits
+a battered old stereogram with lots of newer wires and additions smiling
+out. Some quiet classical music emanates quietly around you, too soft to
+make out, but pleasing to the ears.
+#
+end
+end
+#

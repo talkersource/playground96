@@ -1,0 +1,226 @@
+		Player File Updater v1.1 for PG96
+		=================================
+
+	Origonal Code v1.0 by Goliath (Matthew Bowyer), based on EW-too by
+	Burble (Simon Marsh).  Version 1.1 for PG96 modified slightly by 
+	traP (Mike Bourdaa) for use with the PG 96 talker release.
+
+============================================================================
+Foreward by traP (Mike Bourdaa)
+
+	In early 1996, Matthew Bowyer passed away as a result of a 
+	fire.  All of us in the Playground Development Team extend our
+	regrets to those who knew Matthew.  He was much more than just 
+	an excellent coder, or a great spod.  To many, he was a close 
+	friend, and we know he will be missed.
+
+============================================================================
+
+			 Player file updater
+                         ===================
+
+Update version 1.0
+==================
+
+Introduction
+------------
+
+ Update gives you the ability to safely add new saved data to your player 
+files and write the new files to a new directory. It has been written to be
+as portable as possible, allowing you to mould this program to match the 
+data currently stored in your player files. 
+ At the moment it simply takes a set of player files in and writes them out
+to a directory specified by you saving new int's or strings as you require.
+It will also give you some stats on the number of ressies you have on your
+talker, su's, admin's and so on. Future releases will include more options
+and possible tasks that can be performed. (See Future Releases below).
+
+What does update need
+=====================
+ 
+ At the moment all update requires is a set of player files, for example:
+a - z, the system rooms used by your program and also the player rooms.
+As long as update can find the associated directories it will be able to 
+perform an update :) So far this has been tested on Linux and Sun-OS and works
+perfectly. 
+
+Steps needed to configure update to your talker
+===============================================
+
+1> Setting up updates .rc file 
+------------------------------
+
+ Update uses it's own .rc file which you use to tell update the location of
+the files it needs. At the moment there are only 4 directories it needs to 
+know:
+
+  * The directory where your player rooms are. (data and keys files)
+  * The directory where your system rooms are. (summink.rooms for e.g)
+  * The directory where your current player files are. (files a - z)
+  * The directory where you want it to save the new player files out to.
+
+If you look at update/bin/.updaterc you will see all you need to do is
+fill in the labels <your path>.
+Here is an example of what you might give it:
+
+player_rooms_path:     /home/user/mytalker/files/rooms/
+system_rooms_path:     /home/user/mytalker/files/
+player_files_path:     /home/user/mytalker/files/players/
+new_player_files_path: /home/user/mytalker/new_pfiles/
+
+You can add comments in your .updaterc file using #<your comment>
+
+2> Specifying any new data you talker may already have
+------------------------------------------------------
+
+ Some talkers have already used other methods within their talker code to add
+new data to their player files. This method is fine as long as it doesn't spam
+the player files, this is one of the reasons I put this program together.
+If you have already added new data then you need to the following, since this
+is based on the basic PG96 set up which YOU are using, if you are using
+PG96. However, if you are using PG96 to modify an existing talker, then you
+will need to modify this signifigantly.  The other known version of this 
+program, version 1.0 (which you may or may not already have) should be 
+available at the same site from which you got this program, and it is based
+on the assumption that your pfiles are summink-like, rather than PG-like
+(after all, PG barely existed when this program was origonally written!)
+
+You will need to edit the following files:
+------------------------------------------
+
+update.h
+--------
+
+ In the struct p_struct_extras, you need to cut and paste any new elements
+you have added to your talker. You can also put in any #defines which the
+declarations of these elements may rely on. You only have to add those
+elements which are saved in your pfiles.
+
+example:
+
+#define ADDRESS_LENGTH 100
+
+struct p_struct_extras
+{
+  char    snail_address[ADDRESS_LENGTH];
+  int     number_of_warnings;
+  /* okie lets add 2 new ints we want saved in the pfiles */
+  int     new_saved_flags;
+  int     spod_level;
+}
+
+Okay once update.h has been set up we now need to edit update.c
+
+update.c
+--------
+
+ Might as well initialise the 2 new int's we want to save to 0. This is done as
+follows:
+
+void     initialise_data(player *p)
+{
+  p->new_data.new_saved_flags = 0;
+  p->new_data.spod_level = 0;
+}
+
+ Now we need to tell update to also load the extra saved data from our talker.
+Let's assume snail_address and number_of_warnings are already saved in the 
+current player files. We need to get update to load in this new data after it 
+loads the usual data.
+
+
+void     extra_load_data(player * p, char *r)
+{
+  r = get_string(p->new_data.snail_address, r);
+  r = get_int(&p->new_data.number_of_warnings, r);
+}
+
+ Now we need to to tell update to save this data as well as the 2 new int's 
+created.
+
+void     extra_save_data(player * p)
+{
+  stack = store_string(stack, p->new_data.snail_address);
+  stack = store_int(stack, p->new_data.number_of_warnings);
+  stack = store_int(stack, p->new_data.new_saved_flags);
+  stack = store_int(stack, p->new_data.spod_level);
+}
+
+ This will now accomplish the task of adding 2 new integers to the saved player
+files, and of course you can call them what you want in your code. All you 
+need to know is there are 2 extra int's and call them whatever you like :)
+
+ Next we need to edit init_your_rooms so that it loads your system rooms and 
+the room files associated with them. To do this for any system room we use the
+following chunk of code
+
+
+     sprintf(stack, "%ssystem.rooms", rc_options->srooms_path);
+     stack = strchr(stack,0);
+     lf = load_file(oldstack);
+     init_room("system", lf);
+     stack = oldstack;
+
+ So in init_your rooms you put as many of these chunks as are neccessary, 
+depending on how many system room players you have in the player files.
+All you need to change is the name of the room file in the sprintf
+
+  e.g. sprintf(stack, "%sNEWROOMS.rooms", rc_options->srooms_path);
+
+ and also the player file associated with these rooms
+
+  e.g. init_room("newrooms", lf);
+
+4> Check the Makefile
+---------------------
+ You are now almost ready to compile and run update. Next you need to check the
+Makefile, if you are on a linux box then it should be working as is. Otherwise,
+you may have to uncomment the commented lines, and comment out the corresponding
+linux-unique lines.
+
+Once you have done this type make install and it *should* compile 
+:)
+
+		      =========================
+		      !!!!!!! IMPORTANT !!!!!!!
+		      =========================
+
+ *MAKE* sure you take down your talker while you carry out an update, if you 
+don't you could more than likely screw up some player files it saves :)
+Also make sure you make a *BACKUP* copy of the player files *JUST* in case it 
+doesn't all go well or you do something that screws up the playerfiles.
+
+=======================
+Things to watch out for
+=======================
+
+ This version of Update assumes your basic pfile structure is that of PG96, 
+with possibly new bits added on. If you have deviated from this then you might
+need to edit the load and save routines in plists.c and also the player struct
+in player.h.
+
+ Once you have completed an update and use the new pfiles remember to update 
+the extra_load_data function so that for the next update it will load the new 
+data you have just saved in the player files. But *ONLY* after the player files
+actually contains the new data :)
+
+ Update contains no socket code, it runs as a normal C program and doesn't need
+a port to run on like the talkers :)
+
+
+                               =======
+			       Credits
+			       =======
+
+ Update is based on the code written by Simon Marsh for EWtoo and hacked to 
+  death by Matthew Bowyer(Goliath). 
+ The code is public and so feel free to pass it on to other talkers.
+
+ Have fun updating those player files *grin*
+
+ And remember to *ALWAYS* make backups of your player files !!!!
+ I have tested this extensively on Sun os and Unix, so if you don't back up 
+ your playerfiles and something does go wrong, then *DON'T* expect me to take 
+ any flak :)
+
+

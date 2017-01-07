@@ -1,0 +1,108 @@
+
+First, what is this code called?
+
+There are 4 names that are "sanctioned" for it. The official name of this
+talker release is "PlayGround 96" or PG96.  An older, and functionally
+equivalent name is "PlayCode 96" or PC96.  The distinction is that 
+PlayCode refers only to the source code, where PlayGround refers to the
+entire release.  In some documents, you'll here it refered to as PG, 
+in others as PC. The reason? I'm lazy. Deal. 
+
+There are also approved "nicknames" for the code.  The main two are 
+EW4 (or spelled out, EW-for, or ElseWhere-for).  The name "deathtraP",
+a working name in the early going, should not be used, and is 
+discouraged, because it gives credit to one author over the other three,
+and it just sounds stupid anyway ;-P  
+
+Bottom Line. The official name is PlayGround 96. PlayCode 96 refers to
+the code only (and not the auxillaries like Update 1.1 or MS 1.2, or the
+help files, etc).  EW4 is an approved shorthand (and denotes PG96's 
+origins, being based on EW2)
+************************************************************************
+
+OK. Hopefully you've read the LICENSE and you agree to abide by it.
+
+Here's what you need to do to get the talker running:
+
+in config.h, starting at line 56, code looks like this
+
+#define BACKUP_TIME 40000
+
+/* default port no */
+#define DEFAULT_PORT 9669
+/* Root directory -- NB: the trailing / *is* important!!! */
+#define ROOT "/home/username/talker/"
+/* and, what is this talker CALLED? =) */
+#define TALKER_NAME "The Great Unnamed Talker"
+/* and the emergency HCADMIN password */
+#define HC_PASSWORD "silly+rabbit"
+
+You need to change all of these defaults first: The first one, is BACKUP_TIME.
+This is the time_t value of the day when you want your backups to start. 
+
+You probably want to set this to go off during the least crowded time of the
+day (for me, 40000 was 2 am my time)
+
+The Second one is your port number. Thats simply the digits after the site
+name (i.e. piglet.success.net 2060) -- so set it to suit your tastes -- but 
+I suggest not making it lower than 2000 nor higher than 9999. The default is
+9669 (96 for PG96, and 69 I think you can guess at :-P)
+
+The third one is the working directory. This is easy to find. Go into the 
+talker directory, and type 'pwd' -- then enter that in in the ROOT field.
+
+The Fourth one is your talker name. Be creative, be unique, or be boring, its
+all the same to me.  This field however, automates the process of changing
+references to one given talkers name, and by changing this, you change the
+talker name in most places in the code.
+
+The last one is the HARD CODED ADMIN password.  (Yes, its stored in the 
+code as plain text) -- you NEED this password to login as a default admin! Also,
+CHANGE it, because people will try to hack your admin accounts if you're not
+careful.  This password is used anytime a HARD CODED ADMIN is deleted, and someone
+attempts to login with a HARD CODED name. 
+
+Speaking of HARD CODED, here's where to change who is and isn't HC'd.
+
+admin.h, line 40-44
+/* interns */
+const char *HCAdminList[] = { "admin", "coder", "sysop"};
+const int NUM_ADMINS = 3;  /* this MUST be the same as the # of names
+                               in the *char[] above */
+
+This defines the names "admin", "coder" and "sysop" to have admin powers. 
+Change it immediately to your admin names (probably just your talker name, 
+at first, later on, whomever is added to the project.)
+You MUST be sure that NUM_ADMINS accurately reflects the number of people
+defined above as HARD CODED.  
+
+
+Now, the nitty gritty. You're ready to compile. Just type 'make install' from
+the src directory, and cross your fingers.
+
+This program is optimized for Linux 1.2.13.  Using it on any other platform
+may require some minor porting. If you get "gcc: not found" or something like
+that, then you're in trouble (this thing isn't designed to compile with CC) 
+
+I know that, for running it under SunOS, you'll have problems finding the
+localtime() function, and the bzero() function.  The fix is that both of these
+functions are actually macros, and so you have to find what the name of the 
+macro is on your platform.  This should actually handle most bugs, but there
+are always a few stray, misconfigured systems or OS's that really drive one 
+batty.
+
+The last thing, before I leave you to discover the spoonage that is PlayCode 96,
+is something very important. At this time, you have a code. Thats the easy part.
+You need a site (this can be really hard to get), you need residents, and you
+need a staff now.  
+
+Running a talker sounds like a great idea at the time, often, but sometimes, it
+just isn't. Ask yourself, "Why do I want to start up another talker" -- if the
+answer is "because I wanna be an admin" or "I wanna let my friends be sus" then
+you're in for a rough go.  Its not for everyone.. and its a LOT easier to just
+logon to existing talkers and chat there, than it is to start your own.  
+
+Good luck with it.
+
+		Mike Bourdaa (traP)
+		6/3/96

@@ -1,0 +1,89 @@
+
+Intro to EW-too
+
+This file is intended as a small, possibly amusing, probably half-true at 
+best, recount of the development of talkers in general, EW-too talkers
+in detail, and Playground 96 in specific.
+
+
+Talkers have existed for a long time, long before the first EW-too.  The
+earliest well-known talkers were called "havens" (after a term in older
+MUDS, "the room where player-killing is not allowed") - After this, a
+more modern looking talker, NUTS, was developed, and until very recently, 
+the number of NUTS talkers far exceeded any other type of talker (NUTS 
+still has the edge, numerically, but the difference is no longer great,
+and eventually, EW-too varients will outnumber the NUTS varients) 
+
+
+The following was written by Athanasius after I made a fool of myself 
+Getting talker history dead wrong:
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+  Oh you also have the history of talkers a fair bit wrong. Ask about for
+info on 'CheesePlant's House' the fore-runner to ElseWhere. And ElseWhere
+was NEVER a mud, I was visiting Warwick Uni the January that Burble started
+idlemsg is BUSY coding HIS talker, shhhh...
+
+   Also, Surfers actually came about BEFORE the Ew-Too code was publically
+released. I REALLY must write a 'definitive' history of the start of Surfers
+sometime. Suffice to say, with some inside help, we effectively 'stole'
+the source, and managed to argue Burble into not doing anything about it in
+the end *8-).
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+ The code was designed for a load that was already being exceeded: 
+approximately 1000 total residents, no more than 100 of them on at any one time.   
+Once the source code for a skeleton EW-too talker was released, a few
+"Foothills clones" popped up.  Some of them that have survived (and thrived) 
+to this day are Resort, Forest, and Vineyards.  These, and a few others,
+made up the "second wave" of EW-too talkers.  
+
+In the early going, Surfers had a good edge (see above)
+and as time went on, soon after the origonal EW-too release, a code
+called "Summink" was released. Summinks main points were a better set of 
+shortcut commands (rt, tf, etc..) and several asthetic additions.  
+
+As time went on, and talkers moved, developed, and migrated, they began to
+truly diversify.  Some talkers became the "hot spots" -- the most popular
+hangouts for any given region (Surfers in the UK, Forest in Austrailia, 
+Foothills and Resort in the US) - much of the "big 4"'s popularity was 
+actually due to the restrictions that Boston University placed on Foothills:
+all the people who used to use FH were forced to go to other talkers, and
+this, above all else, sparked Resort's assention.  
+
+Other talkers became more mid-sized, more developed places.  Playground
+was designed as one of these.  Another good example of this kind of
+talker is Tower, or World.  They tended to cater to smaller, but fiercely
+loyal, resident bases, and had more features, and have tended to become
+the source of innovation in the talker world.
+
+The other class of talker is micro-talkers.  These tend to be small, and
+basic, whether by choice or by lack of maintenance, or simply lack of luck.
+They cater to smaller groups, and many of them were founded for little other
+reason than "so that so and so can admin, and so and so can be a SU" 
+
+If you're starting a talker just to be a SU/Admin, forget it. There are 
+much easier ways to lose your hair.  
+
+To say that any one talker, or even any one code, is better than another, 
+is highly subjective.  Each of the large and midsized talkers have unique
+characteristics, and unique goals, in their development.  While a large 
+talker may have to spend more time trying to streamline code, and optimize
+it to the absolute limits, a smaller talker may have the freedom to 
+experiment with features that make using a talker easier and friendlier.
+
+Its up to you, as the admins/coders, to make the decision, "do I want to
+be a huge megatalker" "do I want to be an innovative, experimentational
+chat?" ...
+
+What does the future really hold? Honestly, the days of the EW-too are 
+already prematurely numbered, at this point, by the onslaught of the 
+World Wide Web.  WWW talkers are growing at a pace much greater than
+any other type of chat, and they are more "dummy-proof" -- using a web
+chat doesn't require intelligence, using an EW-too talker sometimes does.
+
+But, the death of EW-too is not emminant at this point.  Anyway, its 
+dangerous to proclaim a body dead when the heart's still beating: they
+have a nasty habit of recovering.
+
+Enjoy, good luck, and may your hair last through the first few weeks...
+

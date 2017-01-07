@@ -1,0 +1,86 @@
+Permission is hereby granted to any person to use, modify, and redistribute
+this program for any non-profit purpose, subject to the following conditions.
+
+1. You must not modify the pg_version function, or the version command that
+   calls this function in any way, without the express written permission of
+   at least 2 of the following people: Chris "astyanax" Allegretta, Michael
+   "traP" Bourdaa, and Hans "Nogard" Petersen.
+
+2. You must credit the following people permenantly in your message of the
+   day:
+
+<	
+Burble (Simon Marsh), who wrote the origonal EW-too
+Athanasius (Neil Soveran-Charley) who modified it to Summink,  
+traP (Mike Bourdaa), astyanax (Chris Allegretta), Nogard (Hans Petersen) 
+and vallie (Valerie Kelley) who modified it further into Playground 96.
+<
+
+You may use either "net" names, real names, or both.  The concept is
+"credit where credit is due"
+
+3. In a help 'credits' (or something similar) you must also credit the 
+   following people:
+
+<
+For EW-Too, Chris Hughes and Jonathan Sloman, who made many advancements,
+
+For Summink, Grim and Nicolai, who made signifigant changes, 
+	   
+For Playground 96, special thanks to some people who gave signifigant
+   advice, hints, and/or inspiration at critical moments:
+
+   sparky, alaric, Brann, snapper, subtle, DanS, Mantis, Oolon, 
+   Currawong, nightshyfte, indieFan, shimone, aimee, and rafferty.
+
+The reportto command was provided by Mantis from the Resort Online.
+<
+
+4. You agree that this program is provided on an "as-is" basis. No one who
+   has worked on this program is required, nor expected, to provide any 
+   sort of technical assistance for this program.  
+
+
+5. If you choose to use the "report_to" code, you recognize that it was
+   written by Mantis from the Resort, and as part of the agreement, you may 
+   not remove the existing command aliases of "rpt" or "reportto" -- you may 
+   add to it, if you wish, but those command names must exist, otherwise the 
+   agreement allowing you to use those commands is voided.
+
+6. If you choose to modify an existing talker with source code directly from,
+   or based upon, the source code of Playground 96, you must make a specific
+   note of this fact in your motd and help credits file: i.e.
+
+"Parts of this program are based on PlayGround96 by traP, astyanax & Nogard"
+
+7. This program cannot be used commercially. Here's why:
+
+	"During late March of 1996, we recieved an offer from someone who
+ 	 was very interested in purchasing our program for a signifigant
+	 amount of money, to use it as a web-chat with both telnet and
+	 www access.  Needless to say, this would have been a revolution
+	 in the talker worlds, giving the EW-too format a chance to compete
+	 in the ever-expanding WWW arena, and it would have put cash in my
+	 pocket to boot!  The deal was nixed by Burble, who threatened to sue
+	 if the deal went through under any conditions and at any price -- we
+	 were not even able to GIVE the code away, because the purpose they
+	 had in mind for the program was of a commercial nature."
+
+Nuff said. This is the #1 reason for my releasing the code at this time, in
+ fact.  I'm currently working on a code that does not have this archaic 
+ restriction (coding my own talker from scratch, no one can tell me what
+ I can and can't do with it, after all), but that code will not, of course,
+ be released like this version is. 
+
+8. The SPODSORT program was written by traP (Mike Bourdaa) to provide a list
+   of losers that spend way too much time on the program.  This program is
+   provided on the same basis, and as part, of the Playground 96 release.
+   (read spodsort.doc in talker/doc for how to use it) 
+
+9. Update, written by Goliath, is also provided, and has been updated to 
+   handle PG96 playerfiles by default.  Update is a hybrid at this point
+   of Goliaths origonal version 1, and parts of PG96 code.  You must
+   comply with Goliaths terms and conditions for using UPDATE in order to
+   use that program.
+
+/* END LEGAL DISCLAIMER AND AGREEMENT */

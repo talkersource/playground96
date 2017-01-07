@@ -1,0 +1,18 @@
+
+To COMPILE the binary.
+
+Go to your src and type   
+gcc -O ssort.c
+mv a.out ../bin/spodsort
+
+
+Thats it. From the bin directory, type 
+updatespodlist
+
+This will call asty's shell script to sort the spodlist without
+causing grief and a long set of instructions.
+
+To bring the new list online in the live version, simply use the
+reload command.
+
+

@@ -1,0 +1,17 @@
+
+OK. here's a few things, just misc info...
+TO Update the spod list.
+(though I might update it fer ya Mikey :)
+
+cd ~/xtreme/bin
+xtreme update spod > spod.list
+spod.sort < spod.list > spodlist.msg
+mv spodlist.msg ../files
+
+For the staff list.
+cd ~/xtreme/bin
+xtreme update players > all_players
+xtract.sus all_players all_supers.policy staff-email
+mv all_supers.policy ../doc
+
+

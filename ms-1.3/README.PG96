@@ -1,0 +1,12 @@
+
+This program is provided, unmodified and untested, as part of PG96. 
+			  ~~~~~~~~~~
+
+It is a replacement to the EW-too dysfunctional mms.c -- what it is
+used for is to place a message on a telnet port (i.e. A message that
+the talker is changing its address, or port number, to redirect people
+to the right place)
+
+Good luck with it, and if it doesn't work, don't blame us.
+
+

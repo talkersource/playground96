@@ -1,0 +1,14 @@
+# Option settings
+# Files 'n paths
+# Make sure these paths are set up properly
+# They must include the FULL path to each directory
+# Note - the trailing / *IS* very important !!!!!!!! */
+# fill in <your path> with the path that leads to those files.
+# e.g. 
+# player_rooms_path:  /users/goliath/talker/files/rooms/
+# use pwd if you are unsure of the full path names 
+
+player_rooms_path:     /home/user/talker/files/rooms/
+system_rooms_path:     /home/user/talker/files/
+player_files_path:     /home/user/talker/files/players/
+new_player_files_path: /home/user/talker/files/new_pfiles/
